@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: video-controller
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: video-controller
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: video-controller
+    spec:
+      serviceAccountName: video-controller
+      imagePullSecrets:
+      - name: k8s-ecr-login-renew-docker-secret
+      containers:
+      - name: controller
+        image: 456087932636.dkr.ecr.us-west-2.amazonaws.com/kube-video/controller:1.3.0
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 150m
+            memory: 250Mi
+        env:
+          - name: KAFKA_BROKERS
+            value: kafka-kafka-bootstrap.kafka.svc.cluster.local:9092
+          - name: KAFKA_CONSUME_TOPIC
+            value: aquavid.events
+          - name: KAFKA_CONSUME_CLIENT_PREFIX
+            value: video-controller-client-
+          - name: KAFKA_CONSUME_GROUP_ID
+            value: video-controller
+          - name: CLOUDEVENT_SCHEMA_PATH
+            value: /usr/app/src/schemas/cloudEvent-1.0.0.json
+          - name: AQUAVID_SUBSCRIPTION_EVENT_SCHEMA_PATH
+            value: /usr/app/src/schemas/aquavidSubscriptionEvent-1.0.0.json
+          - name: AQUAVID_URL
+            value: aquavid.video.svc.cluster.local:80
+          - name: MINIMUM_TEARDOWN_DELAY
+            value: 5m
+          - name: INACTIVITY_THRESHOLD
+            value: 10m
+          - name: RECONCILIATION_INTERVAL
+            value: 5m
+          - name: VIDEO_SINK
+            value: rtmp://nginx.video.svc.cluster.local:1935/live
+          - name: DEFAULT_OTAQ_RTSP_URL_PATH
+            value: /user=admin&password=tlJwpbo6&channel=1&stream=0.sdp
+          - name: DEFAULT_AXIS_RTSP_URL_PATH
+            value: /axis-media/media.amp
+          - name: DEFAULT_OTAQ_RTSP_URL_QUERY_STRING
+            value: real_stream
+          - name: DEFAULT_AXIS_RTSP_URL_QUERY_STRING
+            value: resolution=720x720&FPS=15&h264profile=high&videobitratemode=vbr&videocodec=h264&camera=1
+          - name: DEFAULT_HIKVISION_RTSP_URL_PATH
+            value: /Streaming/Channels/103
+          - name: CAMERA_MAP
+            valueFrom:
+              configMapKeyRef:
+                name: camera-map
+                key: map
+          - name: VIDEO_TAG
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.labels['app.kubernetes.io/version']

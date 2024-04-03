@@ -1,0 +1,62 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: videos.foreveroceans.io
+  labels:
+    app.kubernetes.io/part-of: foreveroceans
+spec:
+  group: foreveroceans.io
+  scope: Namespaced
+  names:
+    plural: videos
+    singular: video
+    kind: Video
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          description: >-
+            Video defines a live stream deployment.
+          properties:
+            status:
+              description: >-
+                VideoStatus defines the observed state of the Video.
+              type: object
+              properties:
+                available:
+                  type: string
+                  description: >-
+                    Indicates whether the live stream is available.
+            spec:
+              description: >-
+                VideoSpec defines the desired state of the Video.
+              type: object
+              properties:
+                pipeline:
+                  type: string
+                  description: >-
+                    Defines the desired pipeline of the live stream.
+                port:
+                  type: number
+                  default: 5000
+                  description: >-
+                    Defines the desired port for the flask server.
+                version:
+                  type: string
+                  default: latest
+                  description: >-
+                    Defines the desired semantic version the Video live streamer should run.
+      subresources:
+        status: {}
+      additionalPrinterColumns:
+      - name: Version
+        type: string
+        description: The desired semantic version the Video live streamer should run.
+        jsonPath: .spec.version
+      - name: Available
+        type: string
+        description: The current availability of the Video.
+        jsonPath: .status.available

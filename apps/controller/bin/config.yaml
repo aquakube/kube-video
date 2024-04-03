@@ -1,0 +1,336 @@
+koa-002-c2-internal:
+  ip: 10.0.9.150
+  type: axis
+koa-002-c2-bow:
+  ip: 10.0.9.151
+  type: axis
+koa-002-f2-internal:
+  ip: 10.0.9.160
+  type: axis
+koa-002-f2-bowl-starboard:
+  ip: 10.0.9.161
+  type: axis
+koa-002-f2-bowl-port:
+  ip: 10.0.9.162
+  type: axis
+koa-002-f2-stern:
+  ip: 10.0.9.164
+  type: axis
+koa-002-eagle180-01:
+  ip: 10.0.9.104
+  type: otaq
+koa-002-eagle180-02:
+  ip: 10.0.9.105
+  type: otaq
+pty-001-c2-internal:
+  ip: 10.7.7.150
+  type: axis
+pty-001-c2-bow:
+  ip: 10.7.7.151
+  type: axis
+pty-001-acc-stern:
+  ip: 10.7.7.152
+  type: axis
+pty-001-silage-internal:
+  ip: 10.7.7.153
+  type: axis
+pty-001-silage-starboard:
+  ip: 10.7.7.154
+  type: axis
+pty-001-silage-bow:
+  ip: 10.7.7.155
+  type: axis
+pty-001-silage-port:
+  ip: 10.7.7.156
+  type: axis
+pty-001-mast-bow:
+  ip: 10.7.7.157
+  type: axis
+pty-001-mast-stern:
+  ip: 10.7.7.158
+  type: axis
+pty-001-pump-room:
+  ip: 10.7.7.159
+  type: axis
+pty-001-f2-internal:
+  ip: 10.7.7.160
+  type: axis
+pty-001-f2-bowl-starboard:
+  ip: 10.7.7.161
+  type: axis
+pty-001-f2-bowl-port:
+  ip: 10.7.7.162
+  type: axis
+pty-001-f2-starboard:
+  ip: 10.7.7.163
+  type: axis
+pty-001-f2-stern:
+  ip: 10.7.7.164
+  type: axis
+pty-001-f2-port:
+  ip: 10.7.7.165
+  type: axis
+pty-001-f2-hopper-starboard:
+  ip: 10.7.7.166
+  type: axis
+pty-001-f2-hopper-port:
+  ip: 10.7.7.167
+  type: axis
+pty-001-f2-under-hopper-starboard:
+  ip: 10.7.7.168
+  type: axis
+pty-001-f2-under-hopper-port:
+  ip: 10.7.7.169
+  type: axis
+pty-001-eagle180-01:
+  ip: 10.7.7.104
+  type: otaq
+pty-001-eagle180-02:
+  ip: 10.7.7.105
+  type: otaq
+pty-001-eagle180-03:
+  ip: 10.7.7.106
+  type: otaq
+pty-001-eagle180-04:
+  ip: 10.7.7.107
+  type: otaq
+pty-001-eagle360-01:
+  ip: 10.7.7.108
+  type: otaq
+pty-001-eagle360-02:
+  ip: 10.7.7.109
+  type: otaq
+pty-002-c2-internal:
+  ip: 10.7.9.150
+  type: axis
+pty-002-c2-bow:
+  ip: 10.7.9.151
+  type: axis
+pty-002-acc-stern:
+  ip: 10.7.9.152
+  type: axis
+pty-002-silage-internal:
+  ip: 10.7.9.153
+  type: axis
+pty-002-silage-starboard:
+  ip: 10.7.9.154
+  type: axis
+pty-002-silage-bow:
+  ip: 10.7.9.155
+  type: axis
+pty-002-silage-port:
+  ip: 10.7.9.156
+  type: axis
+pty-002-mast-bow:
+  ip: 10.7.9.157
+  type: axis
+pty-002-mast-stern:
+  ip: 10.7.9.158
+  type: axis
+pty-002-pump-room:
+  ip: 10.7.9.159
+  type: axis
+pty-002-f2-internal:
+  ip: 10.7.9.160
+  type: axis
+pty-002-f2-bowl-starboard:
+  ip: 10.7.9.161
+  type: axis
+pty-002-f2-bowl-port:
+  ip: 10.7.9.162
+  type: axis
+pty-002-f2-starboard:
+  ip: 10.7.9.163
+  type: axis
+pty-002-f2-stern:
+  ip: 10.7.9.164
+  type: axis
+pty-002-f2-port:
+  ip: 10.7.9.165
+  type: axis
+pty-002-f2-hopper-starboard:
+  ip: 10.7.9.166
+  type: axis
+pty-002-f2-hopper-port:
+  ip: 10.7.9.167
+  type: axis
+pty-002-f2-under-hopper-starboard:
+  ip: 10.7.9.168
+  type: axis
+pty-002-f2-under-hopper-port:
+  ip: 10.7.9.169
+  type: axis
+pty-002-eagle180-01:
+  ip: 10.7.9.104
+  type: otaq
+pty-002-eagle180-02:
+  ip: 10.7.9.105
+  type: otaq
+pty-002-eagle180-03:
+  ip: 10.7.9.106
+  type: otaq
+pty-002-eagle180-04:
+  ip: 10.7.9.107
+  type: otaq
+pty-002-eagle360-01:
+  ip: 10.7.9.108
+  type: otaq
+pty-002-eagle360-02:
+  ip: 10.7.9.109
+  type: otaq
+pty-003-c2-internal:
+  ip: 10.7.11.150
+  type: axis
+pty-003-c2-bow:
+  ip: 10.7.11.151
+  type: axis
+pty-003-acc-stern:
+  ip: 10.7.11.152
+  type: axis
+pty-003-silage-internal:
+  ip: 10.7.11.153
+  type: axis
+pty-003-silage-starboard:
+  ip: 10.7.11.154
+  type: axis
+pty-003-silage-bow:
+  ip: 10.7.11.155
+  type: axis
+pty-003-silage-port:
+  ip: 10.7.11.156
+  type: axis
+pty-003-mast-bow:
+  ip: 10.7.11.157
+  type: axis
+pty-003-mast-stern:
+  ip: 10.7.11.158
+  type: axis
+pty-003-pump-room:
+  ip: 10.7.11.159
+  type: axis
+pty-003-f2-internal:
+  ip: 10.7.11.160
+  type: axis
+pty-003-f2-bowl-starboard:
+  ip: 10.7.11.161
+  type: axis
+pty-003-f2-bowl-port:
+  ip: 10.7.11.162
+  type: axis
+pty-003-f2-starboard:
+  ip: 10.7.11.163
+  type: axis
+pty-003-f2-stern:
+  ip: 10.7.11.164
+  type: axis
+pty-003-f2-port:
+  ip: 10.7.11.165
+  type: axis
+pty-003-f2-hopper-starboard:
+  ip: 10.7.11.166
+  type: axis
+pty-003-f2-hopper-port:
+  ip: 10.7.11.167
+  type: axis
+pty-003-f2-under-hopper-starboard:
+  ip: 10.7.11.168
+  type: axis
+pty-003-f2-under-hopper-port:
+  ip: 10.7.11.169
+  type: axis
+pty-003-eagle180-01:
+  ip: 10.7.11.104
+  type: otaq
+pty-003-eagle180-02:
+  ip: 10.7.11.105
+  type: otaq
+pty-003-eagle180-03:
+  ip: 10.7.11.106
+  type: otaq
+pty-003-eagle180-04:
+  ip: 10.7.11.107
+  type: otaq
+pty-003-eagle360-01:
+  ip: 10.7.11.108
+  type: otaq
+pty-003-eagle360-02:
+  ip: 10.7.11.109
+  type: otaq
+pty-004-c2-internal:
+  ip: 10.7.13.150
+  type: axis
+pty-004-c2-bow:
+  ip: 10.7.13.151
+  type: axis
+pty-004-acc-stern:
+  ip: 10.7.13.152
+  type: axis
+pty-004-silage-internal:
+  ip: 10.7.13.153
+  type: axis
+pty-004-silage-starboard:
+  ip: 10.7.13.154
+  type: axis
+pty-004-silage-bow:
+  ip: 10.7.13.155
+  type: axis
+pty-004-silage-port:
+  ip: 10.7.13.156
+  type: axis
+pty-004-mast-bow:
+  ip: 10.7.13.157
+  type: axis
+pty-004-mast-stern:
+  ip: 10.7.13.158
+  type: axis
+pty-004-pump-room:
+  ip: 10.7.13.159
+  type: axis
+pty-004-f2-internal:
+  ip: 10.7.13.160
+  type: axis
+pty-004-f2-bowl-starboard:
+  ip: 10.7.13.161
+  type: axis
+pty-004-f2-bowl-port:
+  ip: 10.7.13.162
+  type: axis
+pty-004-f2-starboard:
+  ip: 10.7.13.163
+  type: axis
+pty-004-f2-stern:
+  ip: 10.7.13.164
+  type: axis
+pty-004-f2-port:
+  ip: 10.7.13.165
+  type: axis
+pty-004-f2-hopper-starboard:
+  ip: 10.7.13.166
+  type: axis
+pty-004-f2-hopper-port:
+  ip: 10.7.13.167
+  type: axis
+pty-004-f2-under-hopper-starboard:
+  ip: 10.7.13.168
+  type: axis
+pty-004-f2-under-hopper-port:
+  ip: 10.7.13.169
+  type: axis
+pty-004-eagle180-01:
+  ip: 10.7.13.104
+  type: otaq
+pty-004-eagle180-02:
+  ip: 10.7.13.105
+  type: otaq
+pty-004-eagle180-03:
+  ip: 10.7.13.106
+  type: otaq
+pty-004-eagle180-04:
+  ip: 10.7.13.107
+  type: otaq
+pty-004-eagle360-01:
+  ip: 10.7.13.108
+  type: otaq
+pty-004-eagle360-02:
+  ip: 10.7.13.109
+  type: otaq

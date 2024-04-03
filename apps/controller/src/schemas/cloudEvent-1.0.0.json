@@ -1,0 +1,361 @@
+{
+  "$id": "http://schemas.foreveroceans.io/v1/common/cloudEvent/cloudEvent-1.0.0.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Cloud Event",
+  "description": "Cloud event format to transmit messages between applications",
+  "examples": [{
+          "context": {
+              "version": "1.0.0",
+              "id": "d2e9599b-710c-4e0a-a8ed-6b87a8bac904",
+              "timestamp": "2022-03-15T02:46:44.521Z",
+              "type": "api.resources.asset",
+              "action": "create",
+              "dataschema": "http://schema.foreveroceans.io/v1/assets/assets-2.0.0.json",
+              "datacontenttype": "json",
+              "datacontentencoding": "",
+              "datacontentsignature": "0800fc577294c34e0b28ad2839435945",
+              "datacontentsignaturetype": "md5",
+              "xfodbtable": "assets",
+              "source": "https://api.koa.dev.foreveroceans.io/api/fo/v1/resources/assets"
+          },
+          "data": {
+              "siteId": "02",
+              "shortName": "deviceServer",
+              "displayName": "Device Server",
+              "enabled": true,
+              "ipAddress": "192.168.0.100"
+          }
+      },
+      {
+          "context": {
+              "version": "1.0.0",
+              "id": "d2e9599b-710c-4e0a-a8ed-6b87a8bac904",
+              "timestamp": "2022-03-15T02:46:44.521Z",
+              "type": "api.automations.invoke",
+              "action": "create",
+              "dataschema": "http://schema.foreveroceans.io/v1/commands/commands-2.0.0.json",
+              "datacontenttype": "json",
+              "datacontentencoding": "base64",
+              "datacontentsignature": "0800fc577294c34e0b28ad2839435945",
+              "datacontentsignaturetype": "md5",
+              "xfodbtable": "assets",
+              "xforetry": {
+                  "retries": 4,
+                  "factor": 1,
+                  "minTimeout": 500,
+                  "maxTimeout": 10000,
+                  "randomize": true
+              },
+              "source": "https://api.koa.dev.foreveroceans.io/api/fo/v1/farms/koa/sites/02/automations/simpleFeed/invoke"
+          },
+          "data": "eyJmYXJtQ29kZSI6ImtvYSIsInNpdGVJZCI6IjAxIiwic3RhcnRUaW1lIjoiMjAyMC0wOC0yMlQwMToxMzoxNi4xMTYrMDA6MDAiLCJpbnN0YW5jZUlkIjoiY2FiMDA4YWYtZDIwZi00MTgyLWJlNmQtNmYyMmRhOTE2MjZiIiwic2hvcnROYW1lIjoic2ltcGxlRmVlZCIsInVwZGF0ZXMiOlt7ImFjdGlvbiI6IlNUQVJUIiwidGltZXN0YW1wIjoiMjAyMC0wOC0yMlQwMToxMzoxNi4xMTYrMDA6MDAiLCJ1c2VybmFtZSI6ImR1bW15LnVzZXJAZm9yZXZlcm9jZWFucy5jb20iLCJwYXJhbXMiOltdfV19Cg=="
+      },
+      {
+          "context": {
+              "version": "1.0.0",
+              "id": "d2e9599b-710c-4e0a-a8ed-6b87a8bac904",
+              "type": "api.resources.asset",
+              "source": "https://api.koa.dev.foreveroceans.io/api/fo/v1/resources/assets"
+          },
+          "data": {
+              "siteId": "02",
+              "shortName": "deviceServer",
+              "displayName": "Device Server",
+              "enabled": true,
+              "ipAddress": "192.168.0.100"
+          }
+      }
+  ],
+  "required": [
+      "context",
+      "data"
+  ],
+  "type": "object",
+  "properties": {
+      "context": {
+          "$id": "#/properties/context",
+          "type": "object",
+          "title": "The context schema",
+          "description": "An explanation about the purpose of this instance.",
+          "examples": [{
+              "version": "1.0.0",
+              "id": "d2e9599b-710c-4e0a-a8ed-6b87a8bac904",
+              "timestamp": "2022-03-15T02:46:44.521Z",
+              "type": "api.resources.asset",
+              "action": "create",
+              "dataschema": "http://schema.foreveroceans.io/v1/assets/assets-2.0.0.json",
+              "datacontenttype": "json",
+              "datacontentencoding": "base64, gzip",
+              "datacontentsignature": "0800fc577294c34e0b28ad2839435945",
+              "datacontentsignaturetype": "md5",
+              "source": "https://api.koa.dev.foreveroceans.io/api/fo/v1/resources/assets"
+          }],
+          "required": [
+              "version",
+              "id",
+              "type",
+              "source"
+          ],
+          "properties": {
+              "version": {
+                  "$schema": "http://json-schema.org/draft-07/schema",
+                  "$id": "http://schemas.foreveroceans.io/v1/common/properties/schemaVersion-1.0.0.json",
+                  "type": "string",
+                  "title": "Schema Version",
+                  "description": "A semantic version to assign to a document to tell what version of json schema it is of",
+                  "default": "1.0.0",
+                  "pattern": "^([0-9]+)\\.([0-9]+)\\.([0-9]+)$",
+                  "examples": [
+                      "10.6.7",
+                      "10.1.1",
+                      "0.0.1",
+                      "0.1.1",
+                      "0.0.0"
+                  ]
+              },
+              "id": {
+                  "$id": "#/properties/context/properties/id",
+                  "type": "string",
+                  "title": "The id schema",
+                  "description": "A unique id describing this event",
+                  "default": "",
+                  "examples": [
+                      "d2e9599b-710c-4e0a-a8ed-6b87a8bac904"
+                  ]
+              },
+              "timestamp": {
+                  "$schema": "http://json-schema.org/draft-07/schema",
+                  "$id": "http://schemas.foreveroceans.io/v1/common/properties/timestamp-1.0.0.json",
+                  "type": "string",
+                  "title": "Timestamp",
+                  "description": "The timestamp in ISO format",
+                  "format": "date-time",
+                  "examples": [
+                      "2022-03-05T20:58:00.000+00:00"
+                  ]
+              },
+              "type": {
+                  "$id": "#/properties/context/properties/type",
+                  "type": "string",
+                  "title": "The type schema",
+                  "description": "The originating topic or routing key used to route this event to a message bus",
+                  "default": "",
+                  "examples": [
+                      "api.resources.asset"
+                  ]
+              },
+              "action": {
+                  "$id": "#/properties/context/properties/action",
+                  "type": "string",
+                  "description": "The action to perform or was performed based on the type",
+                  "title": "The action schema",
+                  "enum": [
+                      "create",
+                      "delete",
+                      "get",
+                      "list",
+                      "patch",
+                      "update",
+                      "watch"
+                  ],
+                  "examples": [
+                      "create",
+                      "delete",
+                      "get",
+                      "list",
+                      "patch",
+                      "update",
+                      "watch"
+                  ]
+              },
+              "dataschema": {
+                  "$id": "#/properties/context/properties/dataschema",
+                  "type": "string",
+                  "format": "uri",
+                  "title": "The dataschema schema",
+                  "description": "The url where the json schema of the payload can be retrieved",
+                  "default": "",
+                  "examples": [
+                      "http://schema.foreveroceans.io/v1/assets/assets-1.0.0.json"
+                  ]
+              },
+              "datacontenttype": {
+                  "$id": "#/properties/context/properties/datacontenttype",
+                  "default": "",
+                  "description": "Decribes the type that the data field is encoded in",
+                  "enum": [
+                      "json",
+                      "xml",
+                      "csv",
+                      "protobuf",
+                      "avro",
+                      "text"
+                  ],
+                  "examples": [
+                      "json",
+                      "xml",
+                      "csv",
+                      "protobuf",
+                      "avro",
+                      "text"
+                  ],
+                  "title": "The datacontenttype schema",
+                  "type": "string"
+              },
+              "datacontentencoding": {
+                  "$id": "#/properties/context/properties/datacontentencoding",
+                  "default": "",
+                  "description": "Describes how the data is processed for packages either of formatting or compression. A comma delimnated string",
+                  "examples": [
+                      "base64, gzip"
+                  ],
+                  "title": "The datacontentencoding schema",
+                  "type": "string"
+              },
+              "datacontentsignature": {
+                  "$id": "#/properties/context/properties/datacontentsignature",
+                  "type": "string",
+                  "title": "The signature schema",
+                  "description": "The hash of the data payload",
+                  "examples": [
+                      "0800fc577294c34e0b28ad2839435945"
+                  ]
+              },
+              "datacontentsignaturetype": {
+                  "$id": "#/properties/context/properties/datacontentsignaturetype",
+                  "type": "string",
+                  "title": "The signature type schema",
+                  "description": "The type of signature algorithm used",
+                  "enum": [
+                      "md5",
+                      "sha1",
+                      "sha256",
+                      "crc32"
+                  ],
+                  "examples": [
+                      "0800fc577294c34e0b28ad2839435945"
+                  ]
+              },
+              "source": {
+                  "$id": "#/properties/context/properties/source",
+                  "type": "string",
+                  "format": "uri-reference",
+                  "title": "The source schema",
+                  "description": "The URI specifing the origin of the event",
+                  "examples": [
+                      "/bio/test_kafka_load",
+                      "https://api.koa.dev.foreveroceans.io/api/fo/v1/resources/assets"
+                  ]
+              },
+              "xforetry": {
+                  "$schema": "http://json-schema.org/draft-07/schema",
+                  "$id": "http://schemas.foreveroceans.io/v1/common/properties/exponentialBackoff-1.0.0.json",
+                  "type": "object",
+                  "title": "Exponential Backoff",
+                  "examples": [{
+                      "retries": 4,
+                      "factor": 1,
+                      "minTimeout": 500,
+                      "maxTimeout": 10000,
+                      "randomize": true
+                  }],
+                  "required": [
+                      "retries",
+                      "factor",
+                      "minTimeout",
+                      "maxTimeout",
+                      "randomize"
+                  ],
+                  "properties": {
+                      "retries": {
+                          "type": "integer",
+                          "default": 0,
+                          "minimum": 0,
+                          "title": "The retries Schema",
+                          "description": "Number of retries to attempt",
+                          "examples": [
+                              4
+                          ]
+                      },
+                      "factor": {
+                          "type": "number",
+                          "default": 0,
+                          "minimum": 1,
+                          "maximum": 2,
+                          "title": "The factor Schema",
+                          "description": "Multiplicitive factor to adjust the timeout after each retry",
+                          "examples": [
+                              1
+                          ]
+                      },
+                      "minTimeout": {
+                          "type": "number",
+                          "default": 0,
+                          "minimum": 0,
+                          "title": "The minTimeout Schema",
+                          "description": "Minimum time to wait after first retry",
+                          "examples": [
+                              500
+                          ]
+                      },
+                      "maxTimeout": {
+                          "type": "number",
+                          "default": 0,
+                          "minimum": 0,
+                          "title": "The maxTimeout Schema",
+                          "description": "Maximum time to wait after a retry",
+                          "examples": [
+                              10000
+                          ]
+                      },
+                      "randomize": {
+                          "type": "boolean",
+                          "default": false,
+                          "title": "Randomize",
+                          "description": "Whether to add random jitter to the retry"
+                      }
+                  }
+              },
+              "xfodbtable": {
+                  "type": "string",
+                  "title": "Database Table",
+                  "description": "The name of the database table/collection where the described data in the document can be found."
+              }
+          }
+      },
+      "data": {
+          "$id": "#/properties/data",
+          "title": "The data schema",
+          "description": "The payload of this event as described by the context",
+          "anyOf": [{
+                  "type": "object"
+              },
+              {
+                  "type": "array"
+              },
+              {
+                  "type": "string"
+              },
+              {
+                  "type": "boolean"
+              },
+              {
+                  "type": "number"
+              },
+              {
+                  "type": "null"
+              }
+          ],
+          "examples": [{
+                  "siteId": "02",
+                  "shortName": "deviceServer",
+                  "displayName": "Device Server",
+                  "enabled": true,
+                  "ipAddress": "192.168.0.100"
+              },
+              "eyJzaXRlSWQiOiIwMiIsInNob3J0TmFtZSI6ImRldmljZVNlcnZlciIsImRpc3BsYXlOYW1lIjoiRGV2aWNlIFNlcnZlciIsImVuYWJsZWQiOnRydWUsImlwQWRkcmVzcyI6IjE5Mi4xNjguMC4xMDAifQo"
+          ]
+      }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: video-operator
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: video-operator
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: video-operator
+    spec:
+      serviceAccountName: video-operator
+      imagePullSecrets:
+      - name: k8s-ecr-login-renew-docker-secret
+      containers:
+      - name: operator
+        image: 456087932636.dkr.ecr.us-west-2.amazonaws.com/kube-video/operator:1.3.0
+        ports:
+          - containerPort: 5555
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 150m
+            memory: 250Mi
+        env:
+          - name: OPERATING_SITE
+            value: "koa02"
+          - name: FARM_CODE
+            value: "koa"
+          - name: SITE_ID
+            value: "02"
+          - name: ENVIRONMENT
+            value: "prod"
+          - name: NAMESPACE
+            value: "video"
+          - name: SERVICE_NAME
+            value: "video-operator"
+          - name: SERVICE_PORT
+            value: "443"
+          - name: CONTAINER_PORT
+            value: "5555"
+          - name: OTEL_EXPORTER_OTLP_METRICS_ENDPOINT
+            value: "telemetry-collector.opentelemetry.svc.cluster.local:4317"

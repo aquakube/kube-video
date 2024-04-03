@@ -1,0 +1,37 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "http://schemas.foreveroceans.io/v1/aquavid/aquavidSubscriptionEvent-1.0.0.json",
+    "title": "Aquavid Subscribe",
+    "description": "A subscription event from Aquavid service",
+    "type": "object",
+    "default": {},
+    "required": [
+        "type",
+        "camera",
+        "subscribers"
+    ],
+    "properties": {
+        "type": {
+            "title": "Subscribe or Unsubscribe",
+            "type": "string",
+            "enum": [
+                "subscribe",
+                "unsubscribe"
+            ]
+        },
+        "camera": {
+            "title": "Camera name",
+            "type": "string"
+        },
+        "subscribers": {
+            "title": "Subscribers",
+            "type": "integer",
+            "minimum": 0
+        }
+    },
+    "examples": [{
+        "type": "subscribe",
+        "camera": "pty01-eagle180",
+        "subscribers": 1
+    }]
+}
